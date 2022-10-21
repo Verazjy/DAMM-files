@@ -1,0 +1,1905 @@
+{
+    "batch_size": 1024, 
+    "buffer_size": 10000, 
+    "concat_sequence_features": {
+        "gbdt_user_behaviour_follow_context_flow": {
+            "attend_name": [
+                "query", 
+                "brand_id_a", 
+                "sku_cid3_a", 
+                "cqid_a", 
+                "shop_id_a", 
+                "wid_a"
+            ], 
+            "embedding_type": "sequence_attention", 
+            "extra_attend_name": [
+                "user_gender", 
+                "user_age", 
+                "user_is_plus"
+            ], 
+            "extra_features": [
+                "user_behaviour_fco_yestcontx_flow_type_lists_a", 
+                "user_behaviour_fco_yestcontx_flow_timedelta_lists_a"
+            ], 
+            "features": [
+                "user_behaviour_fco_yestcontx_flow_wid_lists_a", 
+                "user_behaviour_fco_yestcontx_flow_shopid_lists_a", 
+                "user_behaviour_fco_yestcontx_flow_brandid_lists_a", 
+                "user_behaviour_fco_yestcontx_flow_cid3_lists_a", 
+                "user_behaviour_fco_yestcontx_flow_cqid_lists_a", 
+                "user_behaviour_fco_yestcontx_flow_type_lists_a", 
+                "user_behaviour_fco_yestcontx_flow_timedelta_lists_a"
+            ]
+        }
+    }, 
+    "contrib_dense_table": true, 
+    "data_dir": "XXXXXXXXXXXXXXXXXXXXXXXXX", 
+    "dataset_header_file": "XXXXXXXXXXXXXXXXXXXXXXXXX", 
+    "embedding_dim": 16, 
+    "epochs": 10000, 
+    "eval_config": {
+        "batch_size": 128, 
+        "cache_input": true
+    }, 
+    "eval_dataset_files": "XXXXXXXXXXXXXXXXXXXXXXXXX", 
+    "eval_steps": 1000, 
+    "experimental_flags": "behav_cut_size:250;seq_kernel:True;din_is_dot:True;din_dropout:0.0;din_lastrelu:False;is_zero_attention:True;prune_invalid_ids:False;allow_empty_sequence:False;embedding_head_weight:3.0;embedding_clip:1.0;din_init_type:var_scale", 
+    "failover_mode": true, 
+    "feature_config": {
+        "age_match_a": {
+            "normalization": "log_min_max"
+        }, 
+        "bm25_12_a": {
+            "normalization": "log_min_max"
+        }, 
+        "bm25_2_a": {
+            "normalization": "log_min_max"
+        }, 
+        "brand_id_a": {
+            "decorator": "dropout(mode,dropout_rate=0.0)"
+        }, 
+        "cart_cnt_a": {
+            "normalization": "log_min_max"
+        }, 
+        "cart_time_diff_a": {
+            "normalization": "log_min_max"
+        }, 
+        "channel_a": {
+            "indicator": true
+        }, 
+        "child_age_gender_cfd_a": {
+            "normalization": "log_min_max"
+        }, 
+        "click_brand_cnt_1day_a": {
+            "normalization": "log_min_max"
+        }, 
+        "click_brand_cnt_1h_a": {
+            "normalization": "log_min_max"
+        }, 
+        "click_brand_time_diff_a": {
+            "normalization": "log_min_max"
+        }, 
+        "click_cnt_1day_a": {
+            "normalization": "log_min_max"
+        }, 
+        "click_cnt_1h_a": {
+            "normalization": "log_min_max"
+        }, 
+        "click_cnt_3days_a": {
+            "normalization": "log_min_max"
+        }, 
+        "click_cnt_a": {
+            "normalization": "min_max"
+        }, 
+        "click_time_diff_a": {
+            "normalization": "log_min_max"
+        }, 
+        "comments_fea_a": {
+            "normalization": "log_min_max"
+        }, 
+        "comments_fea_maxmin_norm_a": {
+            "normalization": "min_max"
+        }, 
+        "cqid_a": {
+            "decorator": "dropout(mode,dropout_rate=0.0)"
+        }, 
+        "fb_weight_a": {
+            "normalization": "log_min_max"
+        }, 
+        "female_rate_a": {
+            "normalization": "log_min_max"
+        }, 
+        "follow_brand_time_diff_a": {
+            "normalization": "log_min_max"
+        }, 
+        "follow_cnt_a": {
+            "normalization": "min_max"
+        }, 
+        "follow_time_diff_a": {
+            "normalization": "log_min_max"
+        }, 
+        "gender_match_a": {
+            "normalization": "log_min_max"
+        }, 
+        "gender_match_up_a": {
+            "normalization": "log_min_max"
+        }, 
+        "gender_match_up_fm_a": {
+            "normalization": "log_min_max"
+        }, 
+        "good_comment_ratio_fea_a": {
+            "normalization": "log_min_max"
+        }, 
+        "good_comment_ratio_fea_maxmin_norm_a": {
+            "normalization": "min_max"
+        }, 
+        "hot_fea_a": {
+            "normalization": "log_min_max"
+        }, 
+        "hot_fea_maxmin_norm_a": {
+            "normalization": "min_max"
+        }, 
+        "is_hst_clk_fea_a": {
+            "normalization": "min_max"
+        }, 
+        "is_hst_ord_fea_a": {
+            "normalization": "min_max"
+        }, 
+        "is_self_fea_a": {
+            "normalization": "min_max"
+        }, 
+        "item_age_a": {
+            "normalization": "log_min_max"
+        }, 
+        "label_a": {
+            "export": false
+        }, 
+        "order_cnt_a": {
+            "normalization": "log_min_max"
+        }, 
+        "order_time_diff_a": {
+            "normalization": "log_min_max"
+        }, 
+        "price_a": {
+            "normalization": "min_max"
+        }, 
+        "price_maxmin_norm_a": {
+            "normalization": "min_max"
+        }, 
+        "qs_query_cid3_click_30d_prpoti_a": {
+            "normalization": "bucketization"
+        }, 
+        "qs_query_cid3_order_stock_30d_prpoti_a": {
+            "normalization": "bucketization"
+        }, 
+        "qs_query_pv_30d_a": {
+            "normalization": "bucketization"
+        }, 
+        "qs_query_wid_amount_stock_15d_a": {
+            "normalization": "bucketization"
+        }, 
+        "qs_query_wid_click_30d_alt_a": {
+            "normalization": "bucketization"
+        }, 
+        "qs_query_wid_click_30d_alt_norm_9995_a": {
+            "normalization": "bucketization"
+        }, 
+        "qs_query_wid_click_3d_alt_norm_9995_a": {
+            "normalization": "bucketization"
+        }, 
+        "qs_query_wid_click_ratio_30d_a": {
+            "normalization": "bucketization"
+        }, 
+        "qs_query_wid_ctr_30d_alt_a": {
+            "normalization": "bucketization"
+        }, 
+        "qs_query_wid_ctr_3d_alt_a": {
+            "normalization": "bucketization"
+        }, 
+        "qs_query_wid_ctr_lcb_30d_a": {
+            "normalization": "log_min_max"
+        }, 
+        "qs_query_wid_cvr_lcb_30d_a": {
+            "normalization": "log_min_max"
+        }, 
+        "qs_query_wid_cvr_stock_30d_a": {
+            "normalization": "bucketization"
+        }, 
+        "qs_query_wid_cvr_stock_3d_a": {
+            "normalization": "bucketization"
+        }, 
+        "qs_query_wid_ircvr_stock_15d_a": {
+            "normalization": "bucketization"
+        }, 
+        "qs_query_wid_ircvr_stock_30d_a": {
+            "normalization": "bucketization"
+        }, 
+        "qs_query_wid_ircvr_stock_3d_a": {
+            "normalization": "bucketization"
+        }, 
+        "qs_query_wid_order_stock_15d_a": {
+            "normalization": "bucketization"
+        }, 
+        "qs_query_wid_order_stock_15d_norm_9995_a": {
+            "normalization": "bucketization"
+        }, 
+        "qs_query_wid_order_stock_30d_a": {
+            "normalization": "bucketization"
+        }, 
+        "qs_query_wid_order_stock_30d_norm_9995_a": {
+            "normalization": "bucketization"
+        }, 
+        "qs_query_wid_order_stock_3d_a": {
+            "normalization": "bucketization"
+        }, 
+        "qs_query_wid_order_stock_3d_norm_9995_a": {
+            "normalization": "bucketization"
+        }, 
+        "qs_query_wid_order_stock_ratio_30d_a": {
+            "normalization": "bucketization"
+        }, 
+        "query": {
+            "decorator": "dropout(mode,dropout_rate=0.0)"
+        }, 
+        "query_ambiguity_a": {
+            "normalization": "log_min_max"
+        }, 
+        "query_brand_a": {
+            "normalization": "min_max"
+        }, 
+        "query_brand_match_a": {
+            "normalization": "min_max"
+        }, 
+        "query_frequency_a": {
+            "normalization": "log_min_max"
+        }, 
+        "query_gender_a": {
+            "normalization": "log_min_max"
+        }, 
+        "query_price_match_a": {
+            "normalization": "min_max"
+        }, 
+        "query_season_a": {
+            "normalization": "log_min_max"
+        }, 
+        "relevance_score_a": {
+            "normalization": "log_min_max"
+        }, 
+        "sale15_fea_a": {
+            "normalization": "log_min_max"
+        }, 
+        "sale15_fea_maxmin_norm_a": {
+            "normalization": "min_max"
+        }, 
+        "sale3_fea_a": {
+            "normalization": "log_min_max"
+        }, 
+        "sale_15_a": {
+            "normalization": "log_min_max"
+        }, 
+        "sales15_fea_a": {
+            "normalization": "log_min_max"
+        }, 
+        "sales3_fea_a": {
+            "normalization": "log_min_max"
+        }, 
+        "shop_id_a": {
+            "decorator": "dropout(mode,dropout_rate=0.0)"
+        }, 
+        "sku_addcart_12h_max_a": {
+            "normalization": "log_min_max"
+        }, 
+        "sku_addcart_1h_a": {
+            "normalization": "log_min_max"
+        }, 
+        "sku_addcart_24h_max_a": {
+            "normalization": "log_min_max"
+        }, 
+        "sku_addcart_3h_sum_a": {
+            "normalization": "log_min_max"
+        }, 
+        "sku_child_gender_a": {
+            "normalization": "log_min_max"
+        }, 
+        "sku_cid1_a": {
+            "decorator": "dropout(mode,dropout_rate=0.0)"
+        }, 
+        "sku_cid2_a": {
+            "decorator": "dropout(mode,dropout_rate=0.0)"
+        }, 
+        "sku_cid3_a": {
+            "decorator": "dropout(mode,dropout_rate=0.0)"
+        }, 
+        "sku_click_24h_max_a": {
+            "normalization": "log_min_max"
+        }, 
+        "sku_cloth_type_a": {
+            "normalization": "log_min_max"
+        }, 
+        "sku_follow_12h_max_a": {
+            "normalization": "log_min_max"
+        }, 
+        "sku_follow_12h_sum_a": {
+            "normalization": "log_min_max"
+        }, 
+        "sku_follow_3h_sum_a": {
+            "normalization": "log_min_max"
+        }, 
+        "sku_follow_6h_max_a": {
+            "normalization": "log_min_max"
+        }, 
+        "sku_order_12h_max_a": {
+            "normalization": "log_min_max"
+        }, 
+        "sku_order_1h_a": {
+            "normalization": "log_min_max"
+        }, 
+        "sku_search_order_24h_max_a": {
+            "normalization": "log_min_max"
+        }, 
+        "sku_search_order_24h_sum_a": {
+            "normalization": "log_min_max"
+        }, 
+        "sku_search_order_3h_max_a": {
+            "normalization": "log_min_max"
+        }, 
+        "sku_search_order_3h_sum_a": {
+            "normalization": "log_min_max"
+        }, 
+        "sku_search_show_12h_max_a": {
+            "normalization": "log_min_max"
+        }, 
+        "sku_search_show_24h_max_a": {
+            "normalization": "log_min_max"
+        }, 
+        "sku_search_show_24h_sum_a": {
+            "normalization": "log_min_max"
+        }, 
+        "sku_search_show_3h_sum_a": {
+            "normalization": "log_min_max"
+        }, 
+        "sku_title_a": {
+            "decorator": "dropout(mode,dropout_rate=0.0)"
+        }, 
+        "sku_ud_addcart_12h_max_a": {
+            "normalization": "log_min_max"
+        }, 
+        "sku_ud_order_12h_max_a": {
+            "normalization": "log_min_max"
+        }, 
+        "sku_ud_order_1h_a": {
+            "normalization": "log_min_max"
+        }, 
+        "sku_ud_order_24h_sum_a": {
+            "normalization": "log_min_max"
+        }, 
+        "sku_ud_order_3h_max_a": {
+            "normalization": "log_min_max"
+        }, 
+        "sku_ud_order_6h_max_a": {
+            "normalization": "log_min_max"
+        }, 
+        "text_weight_a": {
+            "normalization": "log_min_max"
+        }, 
+        "user_age": {
+            "embedding_dim": 8
+        }, 
+        "user_behaviour_fco_yestcontx_flow_brandid_lists_a": {
+            "attend_name": [
+                "query", 
+                "brand_id_a", 
+                "sku_cid3_a", 
+                "cqid_a", 
+                "shop_id_a", 
+                "wid_a"
+            ], 
+            "decorator": "dropout(mode,dropout_rate=0.0)", 
+            "embedding_type": "sequence_attention", 
+            "extra_attend_name": [
+                "user_gender", 
+                "user_age", 
+                "user_is_plus"
+            ]
+        }, 
+        "user_behaviour_fco_yestcontx_flow_cid3_lists_a": {
+            "attend_name": [
+                "query", 
+                "brand_id_a", 
+                "sku_cid3_a", 
+                "cqid_a", 
+                "shop_id_a", 
+                "wid_a"
+            ], 
+            "decorator": "dropout(mode,dropout_rate=0.0)", 
+            "embedding_type": "sequence_attention", 
+            "extra_attend_name": [
+                "user_gender", 
+                "user_age", 
+                "user_is_plus"
+            ]
+        }, 
+        "user_behaviour_fco_yestcontx_flow_cqid_lists_a": {
+            "attend_name": [
+                "query", 
+                "brand_id_a", 
+                "sku_cid3_a", 
+                "cqid_a", 
+                "shop_id_a", 
+                "wid_a"
+            ], 
+            "decorator": "dropout(mode,dropout_rate=0.0)", 
+            "embedding_type": "sequence_attention", 
+            "extra_attend_name": [
+                "user_gender", 
+                "user_age", 
+                "user_is_plus"
+            ]
+        }, 
+        "user_behaviour_fco_yestcontx_flow_shopid_lists_a": {
+            "attend_name": [
+                "query", 
+                "brand_id_a", 
+                "sku_cid3_a", 
+                "cqid_a", 
+                "shop_id_a", 
+                "wid_a"
+            ], 
+            "decorator": "dropout(mode,dropout_rate=0.0)", 
+            "embedding_type": "sequence_attention", 
+            "extra_attend_name": [
+                "user_gender", 
+                "user_age", 
+                "user_is_plus"
+            ]
+        }, 
+        "user_behaviour_fco_yestcontx_flow_timedelta_lists_a": {
+            "attend_name": [
+                "query", 
+                "brand_id_a", 
+                "sku_cid3_a", 
+                "cqid_a", 
+                "shop_id_a", 
+                "wid_a"
+            ], 
+            "decorator": "dropout(mode,dropout_rate=0.0)", 
+            "embedding_type": "sequence_attention", 
+            "extra_attend_name": [
+                "user_gender", 
+                "user_age", 
+                "user_is_plus"
+            ], 
+            "normalization": "parse_time"
+        }, 
+        "user_behaviour_fco_yestcontx_flow_type_lists_a": {
+            "attend_name": [
+                "query", 
+                "brand_id_a", 
+                "sku_cid3_a", 
+                "cqid_a", 
+                "shop_id_a", 
+                "wid_a"
+            ], 
+            "decorator": "dropout(mode,dropout_rate=0.0)", 
+            "embedding_type": "sequence_attention", 
+            "extra_attend_name": [
+                "user_gender", 
+                "user_age", 
+                "user_is_plus"
+            ]
+        }, 
+        "user_behaviour_fco_yestcontx_flow_wid_lists_a": {
+            "attend_name": [
+                "query", 
+                "brand_id_a", 
+                "sku_cid3_a", 
+                "cqid_a", 
+                "shop_id_a", 
+                "wid_a"
+            ], 
+            "decorator": "dropout(mode,dropout_rate=0.0)", 
+            "embedding_dim": 32, 
+            "embedding_type": "sequence_attention", 
+            "extra_attend_name": [
+                "user_gender", 
+                "user_age", 
+                "user_is_plus"
+            ]
+        }, 
+        "user_gender": {
+            "embedding_dim": 8
+        }, 
+        "user_is_plus": {
+            "normalization": "min_max"
+        }, 
+        "user_logistics_cityid": {
+            "embedding_dim": 8
+        }, 
+        "user_logistics_countyid": {
+            "embedding_dim": 8
+        }, 
+        "user_logistics_provinceid": {
+            "embedding_dim": 8
+        }, 
+        "wid_a": {
+            "decorator": "dropout(mode,dropout_rate=0.0)", 
+            "embedding_dim": 32
+        }, 
+        "wid_region_sales_amount_15d_exwh_a": {
+            "normalization": "log_min_max"
+        }, 
+        "wid_region_sales_amount_3d_exwh_a": {
+            "normalization": "log_min_max"
+        }, 
+        "wid_region_sales_amount_raw_15d_exwh_a": {
+            "normalization": "log_min_max"
+        }, 
+        "wid_region_sales_amount_raw_3d_exwh_a": {
+            "normalization": "log_min_max"
+        }, 
+        "wid_region_sales_quantity_15d_exwh_a": {
+            "normalization": "log_min_max"
+        }, 
+        "wid_region_sales_quantity_3d_exwh_a": {
+            "normalization": "log_min_max"
+        }, 
+        "wid_region_sales_quantity_raw_15d_exwh_a": {
+            "normalization": "log_min_max"
+        }, 
+        "wid_region_sales_quantity_raw_3d_exwh_a": {
+            "normalization": "log_min_max"
+        }, 
+        "wid_season_score_a": {
+            "normalization": "bucketization"
+        }, 
+        "window_size_a": {
+            "normalization": "log_min_max"
+        }
+    }, 
+    "feature_stats_file": "feature_stats_2021-08-29.json", 
+    "label_transform": {
+        "components": [
+            "label_a"
+        ], 
+        "type": "identity"
+    }, 
+    "lookup_embedding_ids": false, 
+    "model_config": {
+        "add_batch_negatives": false, 
+        "dropout": 0.2, 
+        "embed_item_query": false, 
+        "embedding_init_mode": "fan_out", 
+        "embedding_init_type": "var_scale", 
+        "expert_num": 4, 
+        "gpu_device": "/device:GPU:0", 
+        "hsc_scale": 0.0, 
+        "item_layer_sizes": [], 
+        "item_query_separate_columns": false, 
+        "learning_rate": 0.0001, 
+        "n_classes": 2, 
+        "network_graph": {
+            "graph_nodes": {
+                "category_gate_ctavr": {
+                    "batch_normalization": false, 
+                    "hidden_units": [
+                        6
+                    ], 
+                    "input_nodes": [
+                        "channel_a", 
+                        "sku_cid3_a"
+                    ], 
+                    "network_type": "feed_forward_embed_no_relu", 
+                    "normalize_kernel": false
+                }, 
+                "category_gate_ctcvr": {
+                    "batch_normalization": false, 
+                    "hidden_units": [
+                        6
+                    ], 
+                    "input_nodes": [
+                        "channel_a", 
+                        "sku_cid3_a"
+                    ], 
+                    "network_type": "feed_forward_embed_no_relu", 
+                    "normalize_kernel": false
+                }, 
+                "category_gate_ctr": {
+                    "batch_normalization": false, 
+                    "hidden_units": [
+                        6
+                    ], 
+                    "input_nodes": [
+                        "channel_a", 
+                        "sku_cid3_a"
+                    ], 
+                    "network_type": "feed_forward_embed_no_relu", 
+                    "normalize_kernel": false
+                }, 
+                "ctavr_head": {
+                    "hidden_units": [
+                        128, 
+                        64
+                    ], 
+                    "input_nodes": [
+                        "multi_domain_layer_ctavr"
+                    ], 
+                    "network_type": "feed_forward"
+                }, 
+                "ctcvr_head": {
+                    "hidden_units": [
+                        128, 
+                        64
+                    ], 
+                    "input_nodes": [
+                        "multi_domain_layer_ctcvr"
+                    ], 
+                    "network_type": "feed_forward"
+                }, 
+                "ctr_head": {
+                    "hidden_units": [
+                        128, 
+                        64
+                    ], 
+                    "input_nodes": [
+                        "multi_domain_layer_ctr"
+                    ], 
+                    "network_type": "feed_forward"
+                }, 
+                "domain_expert_concat": {
+                    "input_nodes": [
+                        "share_expert_0", 
+                        "share_expert_1", 
+                        "share_expert_2", 
+                        "share_expert_3", 
+                        "share_expert_4", 
+                        "share_expert_5"
+                    ], 
+                    "network_type": "multi_expert_stack"
+                }, 
+                "domain_expert_js": {
+                    "batch_normalization": false, 
+                    "hidden_units": [
+                        1024, 
+                        512, 
+                        256
+                    ], 
+                    "input_nodes": [
+                        "qs_query_wid_order_stock_ratio_30d_a", 
+                        "qs_query_wid_order_stock_15d_norm_9995_a", 
+                        "qs_query_wid_order_stock_30d_norm_9995_a", 
+                        "qs_query_cid3_click_30d_prpoti_a", 
+                        "qs_query_wid_cvr_stock_30d_a", 
+                        "qs_query_wid_ctr_30d_alt_a", 
+                        "qs_query_pv_30d_a", 
+                        "qs_query_wid_click_ratio_30d_a", 
+                        "qs_query_wid_click_30d_alt_a", 
+                        "qs_query_wid_order_stock_3d_norm_9995_a", 
+                        "qs_query_wid_ircvr_stock_30d_a", 
+                        "qs_query_wid_order_stock_30d_a", 
+                        "qs_query_cid3_order_stock_30d_prpoti_a", 
+                        "qs_query_wid_click_30d_alt_norm_9995_a", 
+                        "qs_query_wid_order_stock_15d_a", 
+                        "qs_query_wid_ircvr_stock_15d_a", 
+                        "qs_query_wid_ctr_3d_alt_a", 
+                        "qs_query_wid_cvr_stock_3d_a", 
+                        "qs_query_wid_ircvr_stock_3d_a", 
+                        "qs_query_wid_amount_stock_15d_a", 
+                        "qs_query_wid_order_stock_3d_a", 
+                        "qs_query_wid_click_3d_alt_norm_9995_a", 
+                        "wid_season_score_a", 
+                        "sku_search_order_3h_max_a", 
+                        "sku_search_order_3h_sum_a", 
+                        "sku_search_show_3h_sum_a", 
+                        "sku_search_show_12h_max_a", 
+                        "sku_search_order_24h_max_a", 
+                        "sku_search_show_24h_max_a", 
+                        "sku_search_order_24h_sum_a", 
+                        "sku_search_show_24h_sum_a", 
+                        "user_age", 
+                        "age_match_a", 
+                        "user_logistics_provinceid", 
+                        "user_logistics_cityid", 
+                        "user_logistics_countyid", 
+                        "bm25_12_a", 
+                        "bm25_2_a", 
+                        "cart_cnt_a", 
+                        "cart_time_diff_a", 
+                        "child_age_gender_cfd_a", 
+                        "click_brand_cnt_1day_a", 
+                        "click_brand_cnt_1h_a", 
+                        "click_brand_time_diff_a", 
+                        "click_cnt_1day_a", 
+                        "click_cnt_1h_a", 
+                        "click_cnt_3days_a", 
+                        "click_cnt_a", 
+                        "click_time_diff_a", 
+                        "comments_fea_a", 
+                        "comments_fea_maxmin_norm_a", 
+                        "fb_weight_a", 
+                        "female_rate_a", 
+                        "follow_brand_time_diff_a", 
+                        "follow_cnt_a", 
+                        "follow_time_diff_a", 
+                        "user_gender", 
+                        "gender_match_a", 
+                        "gender_match_up_a", 
+                        "gender_match_up_fm_a", 
+                        "good_comment_ratio_fea_a", 
+                        "good_comment_ratio_fea_maxmin_norm_a", 
+                        "hot_fea_a", 
+                        "hot_fea_maxmin_norm_a", 
+                        "is_hst_clk_fea_a", 
+                        "is_hst_ord_fea_a", 
+                        "is_self_fea_a", 
+                        "user_is_plus", 
+                        "item_age_a", 
+                        "order_cnt_a", 
+                        "order_time_diff_a", 
+                        "price_a", 
+                        "price_maxmin_norm_a", 
+                        "qs_query_wid_ctr_lcb_30d_a", 
+                        "qs_query_wid_cvr_lcb_30d_a", 
+                        "query", 
+                        "query_ambiguity_a", 
+                        "query_brand_a", 
+                        "query_brand_match_a", 
+                        "query_frequency_a", 
+                        "query_gender_a", 
+                        "query_price_match_a", 
+                        "query_season_a", 
+                        "relevance_score_a", 
+                        "sale_15_a", 
+                        "sale15_fea_a", 
+                        "sale15_fea_maxmin_norm_a", 
+                        "sale3_fea_a", 
+                        "sales15_fea_a", 
+                        "sales3_fea_a", 
+                        "sku_addcart_1h_a", 
+                        "sku_order_1h_a", 
+                        "sku_ud_order_1h_a", 
+                        "sku_ud_order_3h_max_a", 
+                        "sku_follow_6h_max_a", 
+                        "sku_ud_order_6h_max_a", 
+                        "sku_follow_12h_max_a", 
+                        "sku_addcart_12h_max_a", 
+                        "sku_order_12h_max_a", 
+                        "sku_ud_addcart_12h_max_a", 
+                        "sku_ud_order_12h_max_a", 
+                        "sku_click_24h_max_a", 
+                        "sku_addcart_24h_max_a", 
+                        "sku_follow_3h_sum_a", 
+                        "sku_addcart_3h_sum_a", 
+                        "sku_follow_12h_sum_a", 
+                        "sku_ud_order_24h_sum_a", 
+                        "text_weight_a", 
+                        "wid_region_sales_amount_15d_exwh_a", 
+                        "wid_region_sales_amount_3d_exwh_a", 
+                        "wid_region_sales_amount_raw_15d_exwh_a", 
+                        "wid_region_sales_amount_raw_3d_exwh_a", 
+                        "wid_region_sales_quantity_15d_exwh_a", 
+                        "wid_region_sales_quantity_3d_exwh_a", 
+                        "wid_region_sales_quantity_raw_15d_exwh_a", 
+                        "wid_region_sales_quantity_raw_3d_exwh_a", 
+                        "window_size_a", 
+                        "wid_a", 
+                        "shop_id_a", 
+                        "brand_id_a", 
+                        "sku_cid3_a", 
+                        "cqid_a", 
+                        "gbdt_user_behaviour_follow_context_flow"
+                    ], 
+                    "network_type": "feed_forward_embed_no_relu", 
+                    "normalize_kernel": false
+                }, 
+                "domain_expert_jx": {
+                    "batch_normalization": false, 
+                    "hidden_units": [
+                        1024, 
+                        512, 
+                        256
+                    ], 
+                    "input_nodes": [
+                        "qs_query_wid_order_stock_ratio_30d_a", 
+                        "qs_query_wid_order_stock_15d_norm_9995_a", 
+                        "qs_query_wid_order_stock_30d_norm_9995_a", 
+                        "qs_query_cid3_click_30d_prpoti_a", 
+                        "qs_query_wid_cvr_stock_30d_a", 
+                        "qs_query_wid_ctr_30d_alt_a", 
+                        "qs_query_pv_30d_a", 
+                        "qs_query_wid_click_ratio_30d_a", 
+                        "qs_query_wid_click_30d_alt_a", 
+                        "qs_query_wid_order_stock_3d_norm_9995_a", 
+                        "qs_query_wid_ircvr_stock_30d_a", 
+                        "qs_query_wid_order_stock_30d_a", 
+                        "qs_query_cid3_order_stock_30d_prpoti_a", 
+                        "qs_query_wid_click_30d_alt_norm_9995_a", 
+                        "qs_query_wid_order_stock_15d_a", 
+                        "qs_query_wid_ircvr_stock_15d_a", 
+                        "qs_query_wid_ctr_3d_alt_a", 
+                        "qs_query_wid_cvr_stock_3d_a", 
+                        "qs_query_wid_ircvr_stock_3d_a", 
+                        "qs_query_wid_amount_stock_15d_a", 
+                        "qs_query_wid_order_stock_3d_a", 
+                        "qs_query_wid_click_3d_alt_norm_9995_a", 
+                        "wid_season_score_a", 
+                        "sku_search_order_3h_max_a", 
+                        "sku_search_order_3h_sum_a", 
+                        "sku_search_show_3h_sum_a", 
+                        "sku_search_show_12h_max_a", 
+                        "sku_search_order_24h_max_a", 
+                        "sku_search_show_24h_max_a", 
+                        "sku_search_order_24h_sum_a", 
+                        "sku_search_show_24h_sum_a", 
+                        "user_age", 
+                        "age_match_a", 
+                        "user_logistics_provinceid", 
+                        "user_logistics_cityid", 
+                        "user_logistics_countyid", 
+                        "bm25_12_a", 
+                        "bm25_2_a", 
+                        "cart_cnt_a", 
+                        "cart_time_diff_a", 
+                        "child_age_gender_cfd_a", 
+                        "click_brand_cnt_1day_a", 
+                        "click_brand_cnt_1h_a", 
+                        "click_brand_time_diff_a", 
+                        "click_cnt_1day_a", 
+                        "click_cnt_1h_a", 
+                        "click_cnt_3days_a", 
+                        "click_cnt_a", 
+                        "click_time_diff_a", 
+                        "comments_fea_a", 
+                        "comments_fea_maxmin_norm_a", 
+                        "fb_weight_a", 
+                        "female_rate_a", 
+                        "follow_brand_time_diff_a", 
+                        "follow_cnt_a", 
+                        "follow_time_diff_a", 
+                        "user_gender", 
+                        "gender_match_a", 
+                        "gender_match_up_a", 
+                        "gender_match_up_fm_a", 
+                        "good_comment_ratio_fea_a", 
+                        "good_comment_ratio_fea_maxmin_norm_a", 
+                        "hot_fea_a", 
+                        "hot_fea_maxmin_norm_a", 
+                        "is_hst_clk_fea_a", 
+                        "is_hst_ord_fea_a", 
+                        "is_self_fea_a", 
+                        "user_is_plus", 
+                        "item_age_a", 
+                        "order_cnt_a", 
+                        "order_time_diff_a", 
+                        "price_a", 
+                        "price_maxmin_norm_a", 
+                        "qs_query_wid_ctr_lcb_30d_a", 
+                        "qs_query_wid_cvr_lcb_30d_a", 
+                        "query", 
+                        "query_ambiguity_a", 
+                        "query_brand_a", 
+                        "query_brand_match_a", 
+                        "query_frequency_a", 
+                        "query_gender_a", 
+                        "query_price_match_a", 
+                        "query_season_a", 
+                        "relevance_score_a", 
+                        "sale_15_a", 
+                        "sale15_fea_a", 
+                        "sale15_fea_maxmin_norm_a", 
+                        "sale3_fea_a", 
+                        "sales15_fea_a", 
+                        "sales3_fea_a", 
+                        "sku_addcart_1h_a", 
+                        "sku_order_1h_a", 
+                        "sku_ud_order_1h_a", 
+                        "sku_ud_order_3h_max_a", 
+                        "sku_follow_6h_max_a", 
+                        "sku_ud_order_6h_max_a", 
+                        "sku_follow_12h_max_a", 
+                        "sku_addcart_12h_max_a", 
+                        "sku_order_12h_max_a", 
+                        "sku_ud_addcart_12h_max_a", 
+                        "sku_ud_order_12h_max_a", 
+                        "sku_click_24h_max_a", 
+                        "sku_addcart_24h_max_a", 
+                        "sku_follow_3h_sum_a", 
+                        "sku_addcart_3h_sum_a", 
+                        "sku_follow_12h_sum_a", 
+                        "sku_ud_order_24h_sum_a", 
+                        "text_weight_a", 
+                        "wid_region_sales_amount_15d_exwh_a", 
+                        "wid_region_sales_amount_3d_exwh_a", 
+                        "wid_region_sales_amount_raw_15d_exwh_a", 
+                        "wid_region_sales_amount_raw_3d_exwh_a", 
+                        "wid_region_sales_quantity_15d_exwh_a", 
+                        "wid_region_sales_quantity_3d_exwh_a", 
+                        "wid_region_sales_quantity_raw_15d_exwh_a", 
+                        "wid_region_sales_quantity_raw_3d_exwh_a", 
+                        "window_size_a", 
+                        "wid_a", 
+                        "shop_id_a", 
+                        "brand_id_a", 
+                        "sku_cid3_a", 
+                        "cqid_a", 
+                        "gbdt_user_behaviour_follow_context_flow"
+                    ], 
+                    "network_type": "feed_forward_embed_no_relu", 
+                    "normalize_kernel": false
+                }, 
+                "multi_domain_layer_ctavr": {
+                    "domain_top_kth": 4, 
+                    "input_nodes": [
+                        "domain_expert_concat", 
+                        "category_gate_ctavr"
+                    ], 
+                    "network_type": "weighted_sum_topk"
+                }, 
+                "multi_domain_layer_ctcvr": {
+                    "domain_top_kth": 4, 
+                    "input_nodes": [
+                        "domain_expert_concat", 
+                        "category_gate_ctcvr"
+                    ], 
+                    "network_type": "weighted_sum_topk"
+                }, 
+                "multi_domain_layer_ctr": {
+                    "domain_top_kth": 4, 
+                    "input_nodes": [
+                        "domain_expert_concat", 
+                        "category_gate_ctr"
+                    ], 
+                    "network_type": "weighted_sum_topk"
+                }, 
+                "output": {
+                    "input_nodes": [
+                        "ctcvr_head", 
+                        "ctr_head", 
+                        "ctavr_head"
+                    ], 
+                    "network_type": "multi_head_last"
+                }, 
+                "share_expert_0": {
+                    "batch_normalization": false, 
+                    "hidden_units": [
+                        1024, 
+                        512, 
+                        256
+                    ], 
+                    "input_nodes": [
+                        "qs_query_wid_order_stock_ratio_30d_a", 
+                        "qs_query_wid_order_stock_15d_norm_9995_a", 
+                        "qs_query_wid_order_stock_30d_norm_9995_a", 
+                        "qs_query_cid3_click_30d_prpoti_a", 
+                        "qs_query_wid_cvr_stock_30d_a", 
+                        "qs_query_wid_ctr_30d_alt_a", 
+                        "qs_query_pv_30d_a", 
+                        "qs_query_wid_click_ratio_30d_a", 
+                        "qs_query_wid_click_30d_alt_a", 
+                        "qs_query_wid_order_stock_3d_norm_9995_a", 
+                        "qs_query_wid_ircvr_stock_30d_a", 
+                        "qs_query_wid_order_stock_30d_a", 
+                        "qs_query_cid3_order_stock_30d_prpoti_a", 
+                        "qs_query_wid_click_30d_alt_norm_9995_a", 
+                        "qs_query_wid_order_stock_15d_a", 
+                        "qs_query_wid_ircvr_stock_15d_a", 
+                        "qs_query_wid_ctr_3d_alt_a", 
+                        "qs_query_wid_cvr_stock_3d_a", 
+                        "qs_query_wid_ircvr_stock_3d_a", 
+                        "qs_query_wid_amount_stock_15d_a", 
+                        "qs_query_wid_order_stock_3d_a", 
+                        "qs_query_wid_click_3d_alt_norm_9995_a", 
+                        "wid_season_score_a", 
+                        "sku_search_order_3h_max_a", 
+                        "sku_search_order_3h_sum_a", 
+                        "sku_search_show_3h_sum_a", 
+                        "sku_search_show_12h_max_a", 
+                        "sku_search_order_24h_max_a", 
+                        "sku_search_show_24h_max_a", 
+                        "sku_search_order_24h_sum_a", 
+                        "sku_search_show_24h_sum_a", 
+                        "user_age", 
+                        "age_match_a", 
+                        "user_logistics_provinceid", 
+                        "user_logistics_cityid", 
+                        "user_logistics_countyid", 
+                        "bm25_12_a", 
+                        "bm25_2_a", 
+                        "cart_cnt_a", 
+                        "cart_time_diff_a", 
+                        "child_age_gender_cfd_a", 
+                        "click_brand_cnt_1day_a", 
+                        "click_brand_cnt_1h_a", 
+                        "click_brand_time_diff_a", 
+                        "click_cnt_1day_a", 
+                        "click_cnt_1h_a", 
+                        "click_cnt_3days_a", 
+                        "click_cnt_a", 
+                        "click_time_diff_a", 
+                        "comments_fea_a", 
+                        "comments_fea_maxmin_norm_a", 
+                        "fb_weight_a", 
+                        "female_rate_a", 
+                        "follow_brand_time_diff_a", 
+                        "follow_cnt_a", 
+                        "follow_time_diff_a", 
+                        "user_gender", 
+                        "gender_match_a", 
+                        "gender_match_up_a", 
+                        "gender_match_up_fm_a", 
+                        "good_comment_ratio_fea_a", 
+                        "good_comment_ratio_fea_maxmin_norm_a", 
+                        "hot_fea_a", 
+                        "hot_fea_maxmin_norm_a", 
+                        "is_hst_clk_fea_a", 
+                        "is_hst_ord_fea_a", 
+                        "is_self_fea_a", 
+                        "user_is_plus", 
+                        "item_age_a", 
+                        "order_cnt_a", 
+                        "order_time_diff_a", 
+                        "price_a", 
+                        "price_maxmin_norm_a", 
+                        "qs_query_wid_ctr_lcb_30d_a", 
+                        "qs_query_wid_cvr_lcb_30d_a", 
+                        "query", 
+                        "query_ambiguity_a", 
+                        "query_brand_a", 
+                        "query_brand_match_a", 
+                        "query_frequency_a", 
+                        "query_gender_a", 
+                        "query_price_match_a", 
+                        "query_season_a", 
+                        "relevance_score_a", 
+                        "sale_15_a", 
+                        "sale15_fea_a", 
+                        "sale15_fea_maxmin_norm_a", 
+                        "sale3_fea_a", 
+                        "sales15_fea_a", 
+                        "sales3_fea_a", 
+                        "sku_addcart_1h_a", 
+                        "sku_order_1h_a", 
+                        "sku_ud_order_1h_a", 
+                        "sku_ud_order_3h_max_a", 
+                        "sku_follow_6h_max_a", 
+                        "sku_ud_order_6h_max_a", 
+                        "sku_follow_12h_max_a", 
+                        "sku_addcart_12h_max_a", 
+                        "sku_order_12h_max_a", 
+                        "sku_ud_addcart_12h_max_a", 
+                        "sku_ud_order_12h_max_a", 
+                        "sku_click_24h_max_a", 
+                        "sku_addcart_24h_max_a", 
+                        "sku_follow_3h_sum_a", 
+                        "sku_addcart_3h_sum_a", 
+                        "sku_follow_12h_sum_a", 
+                        "sku_ud_order_24h_sum_a", 
+                        "text_weight_a", 
+                        "wid_region_sales_amount_15d_exwh_a", 
+                        "wid_region_sales_amount_3d_exwh_a", 
+                        "wid_region_sales_amount_raw_15d_exwh_a", 
+                        "wid_region_sales_amount_raw_3d_exwh_a", 
+                        "wid_region_sales_quantity_15d_exwh_a", 
+                        "wid_region_sales_quantity_3d_exwh_a", 
+                        "wid_region_sales_quantity_raw_15d_exwh_a", 
+                        "wid_region_sales_quantity_raw_3d_exwh_a", 
+                        "window_size_a", 
+                        "wid_a", 
+                        "shop_id_a", 
+                        "brand_id_a", 
+                        "sku_cid3_a", 
+                        "cqid_a", 
+                        "gbdt_user_behaviour_follow_context_flow"
+                    ], 
+                    "network_type": "feed_forward_embed_no_relu", 
+                    "normalize_kernel": false, 
+                    "share_expert_num": 6
+                }, 
+                "share_expert_1": {
+                    "batch_normalization": false, 
+                    "hidden_units": [
+                        1024, 
+                        512, 
+                        256
+                    ], 
+                    "input_nodes": [
+                        "qs_query_wid_order_stock_ratio_30d_a", 
+                        "qs_query_wid_order_stock_15d_norm_9995_a", 
+                        "qs_query_wid_order_stock_30d_norm_9995_a", 
+                        "qs_query_cid3_click_30d_prpoti_a", 
+                        "qs_query_wid_cvr_stock_30d_a", 
+                        "qs_query_wid_ctr_30d_alt_a", 
+                        "qs_query_pv_30d_a", 
+                        "qs_query_wid_click_ratio_30d_a", 
+                        "qs_query_wid_click_30d_alt_a", 
+                        "qs_query_wid_order_stock_3d_norm_9995_a", 
+                        "qs_query_wid_ircvr_stock_30d_a", 
+                        "qs_query_wid_order_stock_30d_a", 
+                        "qs_query_cid3_order_stock_30d_prpoti_a", 
+                        "qs_query_wid_click_30d_alt_norm_9995_a", 
+                        "qs_query_wid_order_stock_15d_a", 
+                        "qs_query_wid_ircvr_stock_15d_a", 
+                        "qs_query_wid_ctr_3d_alt_a", 
+                        "qs_query_wid_cvr_stock_3d_a", 
+                        "qs_query_wid_ircvr_stock_3d_a", 
+                        "qs_query_wid_amount_stock_15d_a", 
+                        "qs_query_wid_order_stock_3d_a", 
+                        "qs_query_wid_click_3d_alt_norm_9995_a", 
+                        "wid_season_score_a", 
+                        "sku_search_order_3h_max_a", 
+                        "sku_search_order_3h_sum_a", 
+                        "sku_search_show_3h_sum_a", 
+                        "sku_search_show_12h_max_a", 
+                        "sku_search_order_24h_max_a", 
+                        "sku_search_show_24h_max_a", 
+                        "sku_search_order_24h_sum_a", 
+                        "sku_search_show_24h_sum_a", 
+                        "user_age", 
+                        "age_match_a", 
+                        "user_logistics_provinceid", 
+                        "user_logistics_cityid", 
+                        "user_logistics_countyid", 
+                        "bm25_12_a", 
+                        "bm25_2_a", 
+                        "cart_cnt_a", 
+                        "cart_time_diff_a", 
+                        "child_age_gender_cfd_a", 
+                        "click_brand_cnt_1day_a", 
+                        "click_brand_cnt_1h_a", 
+                        "click_brand_time_diff_a", 
+                        "click_cnt_1day_a", 
+                        "click_cnt_1h_a", 
+                        "click_cnt_3days_a", 
+                        "click_cnt_a", 
+                        "click_time_diff_a", 
+                        "comments_fea_a", 
+                        "comments_fea_maxmin_norm_a", 
+                        "fb_weight_a", 
+                        "female_rate_a", 
+                        "follow_brand_time_diff_a", 
+                        "follow_cnt_a", 
+                        "follow_time_diff_a", 
+                        "user_gender", 
+                        "gender_match_a", 
+                        "gender_match_up_a", 
+                        "gender_match_up_fm_a", 
+                        "good_comment_ratio_fea_a", 
+                        "good_comment_ratio_fea_maxmin_norm_a", 
+                        "hot_fea_a", 
+                        "hot_fea_maxmin_norm_a", 
+                        "is_hst_clk_fea_a", 
+                        "is_hst_ord_fea_a", 
+                        "is_self_fea_a", 
+                        "user_is_plus", 
+                        "item_age_a", 
+                        "order_cnt_a", 
+                        "order_time_diff_a", 
+                        "price_a", 
+                        "price_maxmin_norm_a", 
+                        "qs_query_wid_ctr_lcb_30d_a", 
+                        "qs_query_wid_cvr_lcb_30d_a", 
+                        "query", 
+                        "query_ambiguity_a", 
+                        "query_brand_a", 
+                        "query_brand_match_a", 
+                        "query_frequency_a", 
+                        "query_gender_a", 
+                        "query_price_match_a", 
+                        "query_season_a", 
+                        "relevance_score_a", 
+                        "sale_15_a", 
+                        "sale15_fea_a", 
+                        "sale15_fea_maxmin_norm_a", 
+                        "sale3_fea_a", 
+                        "sales15_fea_a", 
+                        "sales3_fea_a", 
+                        "sku_addcart_1h_a", 
+                        "sku_order_1h_a", 
+                        "sku_ud_order_1h_a", 
+                        "sku_ud_order_3h_max_a", 
+                        "sku_follow_6h_max_a", 
+                        "sku_ud_order_6h_max_a", 
+                        "sku_follow_12h_max_a", 
+                        "sku_addcart_12h_max_a", 
+                        "sku_order_12h_max_a", 
+                        "sku_ud_addcart_12h_max_a", 
+                        "sku_ud_order_12h_max_a", 
+                        "sku_click_24h_max_a", 
+                        "sku_addcart_24h_max_a", 
+                        "sku_follow_3h_sum_a", 
+                        "sku_addcart_3h_sum_a", 
+                        "sku_follow_12h_sum_a", 
+                        "sku_ud_order_24h_sum_a", 
+                        "text_weight_a", 
+                        "wid_region_sales_amount_15d_exwh_a", 
+                        "wid_region_sales_amount_3d_exwh_a", 
+                        "wid_region_sales_amount_raw_15d_exwh_a", 
+                        "wid_region_sales_amount_raw_3d_exwh_a", 
+                        "wid_region_sales_quantity_15d_exwh_a", 
+                        "wid_region_sales_quantity_3d_exwh_a", 
+                        "wid_region_sales_quantity_raw_15d_exwh_a", 
+                        "wid_region_sales_quantity_raw_3d_exwh_a", 
+                        "window_size_a", 
+                        "wid_a", 
+                        "shop_id_a", 
+                        "brand_id_a", 
+                        "sku_cid3_a", 
+                        "cqid_a", 
+                        "gbdt_user_behaviour_follow_context_flow"
+                    ], 
+                    "network_type": "feed_forward_embed_no_relu", 
+                    "normalize_kernel": false, 
+                    "share_expert_num": 6
+                }, 
+                "share_expert_2": {
+                    "batch_normalization": false, 
+                    "hidden_units": [
+                        1024, 
+                        512, 
+                        256
+                    ], 
+                    "input_nodes": [
+                        "qs_query_wid_order_stock_ratio_30d_a", 
+                        "qs_query_wid_order_stock_15d_norm_9995_a", 
+                        "qs_query_wid_order_stock_30d_norm_9995_a", 
+                        "qs_query_cid3_click_30d_prpoti_a", 
+                        "qs_query_wid_cvr_stock_30d_a", 
+                        "qs_query_wid_ctr_30d_alt_a", 
+                        "qs_query_pv_30d_a", 
+                        "qs_query_wid_click_ratio_30d_a", 
+                        "qs_query_wid_click_30d_alt_a", 
+                        "qs_query_wid_order_stock_3d_norm_9995_a", 
+                        "qs_query_wid_ircvr_stock_30d_a", 
+                        "qs_query_wid_order_stock_30d_a", 
+                        "qs_query_cid3_order_stock_30d_prpoti_a", 
+                        "qs_query_wid_click_30d_alt_norm_9995_a", 
+                        "qs_query_wid_order_stock_15d_a", 
+                        "qs_query_wid_ircvr_stock_15d_a", 
+                        "qs_query_wid_ctr_3d_alt_a", 
+                        "qs_query_wid_cvr_stock_3d_a", 
+                        "qs_query_wid_ircvr_stock_3d_a", 
+                        "qs_query_wid_amount_stock_15d_a", 
+                        "qs_query_wid_order_stock_3d_a", 
+                        "qs_query_wid_click_3d_alt_norm_9995_a", 
+                        "wid_season_score_a", 
+                        "sku_search_order_3h_max_a", 
+                        "sku_search_order_3h_sum_a", 
+                        "sku_search_show_3h_sum_a", 
+                        "sku_search_show_12h_max_a", 
+                        "sku_search_order_24h_max_a", 
+                        "sku_search_show_24h_max_a", 
+                        "sku_search_order_24h_sum_a", 
+                        "sku_search_show_24h_sum_a", 
+                        "user_age", 
+                        "age_match_a", 
+                        "user_logistics_provinceid", 
+                        "user_logistics_cityid", 
+                        "user_logistics_countyid", 
+                        "bm25_12_a", 
+                        "bm25_2_a", 
+                        "cart_cnt_a", 
+                        "cart_time_diff_a", 
+                        "child_age_gender_cfd_a", 
+                        "click_brand_cnt_1day_a", 
+                        "click_brand_cnt_1h_a", 
+                        "click_brand_time_diff_a", 
+                        "click_cnt_1day_a", 
+                        "click_cnt_1h_a", 
+                        "click_cnt_3days_a", 
+                        "click_cnt_a", 
+                        "click_time_diff_a", 
+                        "comments_fea_a", 
+                        "comments_fea_maxmin_norm_a", 
+                        "fb_weight_a", 
+                        "female_rate_a", 
+                        "follow_brand_time_diff_a", 
+                        "follow_cnt_a", 
+                        "follow_time_diff_a", 
+                        "user_gender", 
+                        "gender_match_a", 
+                        "gender_match_up_a", 
+                        "gender_match_up_fm_a", 
+                        "good_comment_ratio_fea_a", 
+                        "good_comment_ratio_fea_maxmin_norm_a", 
+                        "hot_fea_a", 
+                        "hot_fea_maxmin_norm_a", 
+                        "is_hst_clk_fea_a", 
+                        "is_hst_ord_fea_a", 
+                        "is_self_fea_a", 
+                        "user_is_plus", 
+                        "item_age_a", 
+                        "order_cnt_a", 
+                        "order_time_diff_a", 
+                        "price_a", 
+                        "price_maxmin_norm_a", 
+                        "qs_query_wid_ctr_lcb_30d_a", 
+                        "qs_query_wid_cvr_lcb_30d_a", 
+                        "query", 
+                        "query_ambiguity_a", 
+                        "query_brand_a", 
+                        "query_brand_match_a", 
+                        "query_frequency_a", 
+                        "query_gender_a", 
+                        "query_price_match_a", 
+                        "query_season_a", 
+                        "relevance_score_a", 
+                        "sale_15_a", 
+                        "sale15_fea_a", 
+                        "sale15_fea_maxmin_norm_a", 
+                        "sale3_fea_a", 
+                        "sales15_fea_a", 
+                        "sales3_fea_a", 
+                        "sku_addcart_1h_a", 
+                        "sku_order_1h_a", 
+                        "sku_ud_order_1h_a", 
+                        "sku_ud_order_3h_max_a", 
+                        "sku_follow_6h_max_a", 
+                        "sku_ud_order_6h_max_a", 
+                        "sku_follow_12h_max_a", 
+                        "sku_addcart_12h_max_a", 
+                        "sku_order_12h_max_a", 
+                        "sku_ud_addcart_12h_max_a", 
+                        "sku_ud_order_12h_max_a", 
+                        "sku_click_24h_max_a", 
+                        "sku_addcart_24h_max_a", 
+                        "sku_follow_3h_sum_a", 
+                        "sku_addcart_3h_sum_a", 
+                        "sku_follow_12h_sum_a", 
+                        "sku_ud_order_24h_sum_a", 
+                        "text_weight_a", 
+                        "wid_region_sales_amount_15d_exwh_a", 
+                        "wid_region_sales_amount_3d_exwh_a", 
+                        "wid_region_sales_amount_raw_15d_exwh_a", 
+                        "wid_region_sales_amount_raw_3d_exwh_a", 
+                        "wid_region_sales_quantity_15d_exwh_a", 
+                        "wid_region_sales_quantity_3d_exwh_a", 
+                        "wid_region_sales_quantity_raw_15d_exwh_a", 
+                        "wid_region_sales_quantity_raw_3d_exwh_a", 
+                        "window_size_a", 
+                        "wid_a", 
+                        "shop_id_a", 
+                        "brand_id_a", 
+                        "sku_cid3_a", 
+                        "cqid_a", 
+                        "gbdt_user_behaviour_follow_context_flow"
+                    ], 
+                    "network_type": "feed_forward_embed_no_relu", 
+                    "normalize_kernel": false, 
+                    "share_expert_num": 6
+                }, 
+                "share_expert_3": {
+                    "batch_normalization": false, 
+                    "hidden_units": [
+                        1024, 
+                        512, 
+                        256
+                    ], 
+                    "input_nodes": [
+                        "qs_query_wid_order_stock_ratio_30d_a", 
+                        "qs_query_wid_order_stock_15d_norm_9995_a", 
+                        "qs_query_wid_order_stock_30d_norm_9995_a", 
+                        "qs_query_cid3_click_30d_prpoti_a", 
+                        "qs_query_wid_cvr_stock_30d_a", 
+                        "qs_query_wid_ctr_30d_alt_a", 
+                        "qs_query_pv_30d_a", 
+                        "qs_query_wid_click_ratio_30d_a", 
+                        "qs_query_wid_click_30d_alt_a", 
+                        "qs_query_wid_order_stock_3d_norm_9995_a", 
+                        "qs_query_wid_ircvr_stock_30d_a", 
+                        "qs_query_wid_order_stock_30d_a", 
+                        "qs_query_cid3_order_stock_30d_prpoti_a", 
+                        "qs_query_wid_click_30d_alt_norm_9995_a", 
+                        "qs_query_wid_order_stock_15d_a", 
+                        "qs_query_wid_ircvr_stock_15d_a", 
+                        "qs_query_wid_ctr_3d_alt_a", 
+                        "qs_query_wid_cvr_stock_3d_a", 
+                        "qs_query_wid_ircvr_stock_3d_a", 
+                        "qs_query_wid_amount_stock_15d_a", 
+                        "qs_query_wid_order_stock_3d_a", 
+                        "qs_query_wid_click_3d_alt_norm_9995_a", 
+                        "wid_season_score_a", 
+                        "sku_search_order_3h_max_a", 
+                        "sku_search_order_3h_sum_a", 
+                        "sku_search_show_3h_sum_a", 
+                        "sku_search_show_12h_max_a", 
+                        "sku_search_order_24h_max_a", 
+                        "sku_search_show_24h_max_a", 
+                        "sku_search_order_24h_sum_a", 
+                        "sku_search_show_24h_sum_a", 
+                        "user_age", 
+                        "age_match_a", 
+                        "user_logistics_provinceid", 
+                        "user_logistics_cityid", 
+                        "user_logistics_countyid", 
+                        "bm25_12_a", 
+                        "bm25_2_a", 
+                        "cart_cnt_a", 
+                        "cart_time_diff_a", 
+                        "child_age_gender_cfd_a", 
+                        "click_brand_cnt_1day_a", 
+                        "click_brand_cnt_1h_a", 
+                        "click_brand_time_diff_a", 
+                        "click_cnt_1day_a", 
+                        "click_cnt_1h_a", 
+                        "click_cnt_3days_a", 
+                        "click_cnt_a", 
+                        "click_time_diff_a", 
+                        "comments_fea_a", 
+                        "comments_fea_maxmin_norm_a", 
+                        "fb_weight_a", 
+                        "female_rate_a", 
+                        "follow_brand_time_diff_a", 
+                        "follow_cnt_a", 
+                        "follow_time_diff_a", 
+                        "user_gender", 
+                        "gender_match_a", 
+                        "gender_match_up_a", 
+                        "gender_match_up_fm_a", 
+                        "good_comment_ratio_fea_a", 
+                        "good_comment_ratio_fea_maxmin_norm_a", 
+                        "hot_fea_a", 
+                        "hot_fea_maxmin_norm_a", 
+                        "is_hst_clk_fea_a", 
+                        "is_hst_ord_fea_a", 
+                        "is_self_fea_a", 
+                        "user_is_plus", 
+                        "item_age_a", 
+                        "order_cnt_a", 
+                        "order_time_diff_a", 
+                        "price_a", 
+                        "price_maxmin_norm_a", 
+                        "qs_query_wid_ctr_lcb_30d_a", 
+                        "qs_query_wid_cvr_lcb_30d_a", 
+                        "query", 
+                        "query_ambiguity_a", 
+                        "query_brand_a", 
+                        "query_brand_match_a", 
+                        "query_frequency_a", 
+                        "query_gender_a", 
+                        "query_price_match_a", 
+                        "query_season_a", 
+                        "relevance_score_a", 
+                        "sale_15_a", 
+                        "sale15_fea_a", 
+                        "sale15_fea_maxmin_norm_a", 
+                        "sale3_fea_a", 
+                        "sales15_fea_a", 
+                        "sales3_fea_a", 
+                        "sku_addcart_1h_a", 
+                        "sku_order_1h_a", 
+                        "sku_ud_order_1h_a", 
+                        "sku_ud_order_3h_max_a", 
+                        "sku_follow_6h_max_a", 
+                        "sku_ud_order_6h_max_a", 
+                        "sku_follow_12h_max_a", 
+                        "sku_addcart_12h_max_a", 
+                        "sku_order_12h_max_a", 
+                        "sku_ud_addcart_12h_max_a", 
+                        "sku_ud_order_12h_max_a", 
+                        "sku_click_24h_max_a", 
+                        "sku_addcart_24h_max_a", 
+                        "sku_follow_3h_sum_a", 
+                        "sku_addcart_3h_sum_a", 
+                        "sku_follow_12h_sum_a", 
+                        "sku_ud_order_24h_sum_a", 
+                        "text_weight_a", 
+                        "wid_region_sales_amount_15d_exwh_a", 
+                        "wid_region_sales_amount_3d_exwh_a", 
+                        "wid_region_sales_amount_raw_15d_exwh_a", 
+                        "wid_region_sales_amount_raw_3d_exwh_a", 
+                        "wid_region_sales_quantity_15d_exwh_a", 
+                        "wid_region_sales_quantity_3d_exwh_a", 
+                        "wid_region_sales_quantity_raw_15d_exwh_a", 
+                        "wid_region_sales_quantity_raw_3d_exwh_a", 
+                        "window_size_a", 
+                        "wid_a", 
+                        "shop_id_a", 
+                        "brand_id_a", 
+                        "sku_cid3_a", 
+                        "cqid_a", 
+                        "gbdt_user_behaviour_follow_context_flow"
+                    ], 
+                    "network_type": "feed_forward_embed_no_relu", 
+                    "normalize_kernel": false, 
+                    "share_expert_num": 6
+                }, 
+                "share_expert_4": {
+                    "batch_normalization": false, 
+                    "hidden_units": [
+                        1024, 
+                        512, 
+                        256
+                    ], 
+                    "input_nodes": [
+                        "qs_query_wid_order_stock_ratio_30d_a", 
+                        "qs_query_wid_order_stock_15d_norm_9995_a", 
+                        "qs_query_wid_order_stock_30d_norm_9995_a", 
+                        "qs_query_cid3_click_30d_prpoti_a", 
+                        "qs_query_wid_cvr_stock_30d_a", 
+                        "qs_query_wid_ctr_30d_alt_a", 
+                        "qs_query_pv_30d_a", 
+                        "qs_query_wid_click_ratio_30d_a", 
+                        "qs_query_wid_click_30d_alt_a", 
+                        "qs_query_wid_order_stock_3d_norm_9995_a", 
+                        "qs_query_wid_ircvr_stock_30d_a", 
+                        "qs_query_wid_order_stock_30d_a", 
+                        "qs_query_cid3_order_stock_30d_prpoti_a", 
+                        "qs_query_wid_click_30d_alt_norm_9995_a", 
+                        "qs_query_wid_order_stock_15d_a", 
+                        "qs_query_wid_ircvr_stock_15d_a", 
+                        "qs_query_wid_ctr_3d_alt_a", 
+                        "qs_query_wid_cvr_stock_3d_a", 
+                        "qs_query_wid_ircvr_stock_3d_a", 
+                        "qs_query_wid_amount_stock_15d_a", 
+                        "qs_query_wid_order_stock_3d_a", 
+                        "qs_query_wid_click_3d_alt_norm_9995_a", 
+                        "wid_season_score_a", 
+                        "sku_search_order_3h_max_a", 
+                        "sku_search_order_3h_sum_a", 
+                        "sku_search_show_3h_sum_a", 
+                        "sku_search_show_12h_max_a", 
+                        "sku_search_order_24h_max_a", 
+                        "sku_search_show_24h_max_a", 
+                        "sku_search_order_24h_sum_a", 
+                        "sku_search_show_24h_sum_a", 
+                        "user_age", 
+                        "age_match_a", 
+                        "user_logistics_provinceid", 
+                        "user_logistics_cityid", 
+                        "user_logistics_countyid", 
+                        "bm25_12_a", 
+                        "bm25_2_a", 
+                        "cart_cnt_a", 
+                        "cart_time_diff_a", 
+                        "child_age_gender_cfd_a", 
+                        "click_brand_cnt_1day_a", 
+                        "click_brand_cnt_1h_a", 
+                        "click_brand_time_diff_a", 
+                        "click_cnt_1day_a", 
+                        "click_cnt_1h_a", 
+                        "click_cnt_3days_a", 
+                        "click_cnt_a", 
+                        "click_time_diff_a", 
+                        "comments_fea_a", 
+                        "comments_fea_maxmin_norm_a", 
+                        "fb_weight_a", 
+                        "female_rate_a", 
+                        "follow_brand_time_diff_a", 
+                        "follow_cnt_a", 
+                        "follow_time_diff_a", 
+                        "user_gender", 
+                        "gender_match_a", 
+                        "gender_match_up_a", 
+                        "gender_match_up_fm_a", 
+                        "good_comment_ratio_fea_a", 
+                        "good_comment_ratio_fea_maxmin_norm_a", 
+                        "hot_fea_a", 
+                        "hot_fea_maxmin_norm_a", 
+                        "is_hst_clk_fea_a", 
+                        "is_hst_ord_fea_a", 
+                        "is_self_fea_a", 
+                        "user_is_plus", 
+                        "item_age_a", 
+                        "order_cnt_a", 
+                        "order_time_diff_a", 
+                        "price_a", 
+                        "price_maxmin_norm_a", 
+                        "qs_query_wid_ctr_lcb_30d_a", 
+                        "qs_query_wid_cvr_lcb_30d_a", 
+                        "query", 
+                        "query_ambiguity_a", 
+                        "query_brand_a", 
+                        "query_brand_match_a", 
+                        "query_frequency_a", 
+                        "query_gender_a", 
+                        "query_price_match_a", 
+                        "query_season_a", 
+                        "relevance_score_a", 
+                        "sale_15_a", 
+                        "sale15_fea_a", 
+                        "sale15_fea_maxmin_norm_a", 
+                        "sale3_fea_a", 
+                        "sales15_fea_a", 
+                        "sales3_fea_a", 
+                        "sku_addcart_1h_a", 
+                        "sku_order_1h_a", 
+                        "sku_ud_order_1h_a", 
+                        "sku_ud_order_3h_max_a", 
+                        "sku_follow_6h_max_a", 
+                        "sku_ud_order_6h_max_a", 
+                        "sku_follow_12h_max_a", 
+                        "sku_addcart_12h_max_a", 
+                        "sku_order_12h_max_a", 
+                        "sku_ud_addcart_12h_max_a", 
+                        "sku_ud_order_12h_max_a", 
+                        "sku_click_24h_max_a", 
+                        "sku_addcart_24h_max_a", 
+                        "sku_follow_3h_sum_a", 
+                        "sku_addcart_3h_sum_a", 
+                        "sku_follow_12h_sum_a", 
+                        "sku_ud_order_24h_sum_a", 
+                        "text_weight_a", 
+                        "wid_region_sales_amount_15d_exwh_a", 
+                        "wid_region_sales_amount_3d_exwh_a", 
+                        "wid_region_sales_amount_raw_15d_exwh_a", 
+                        "wid_region_sales_amount_raw_3d_exwh_a", 
+                        "wid_region_sales_quantity_15d_exwh_a", 
+                        "wid_region_sales_quantity_3d_exwh_a", 
+                        "wid_region_sales_quantity_raw_15d_exwh_a", 
+                        "wid_region_sales_quantity_raw_3d_exwh_a", 
+                        "window_size_a", 
+                        "wid_a", 
+                        "shop_id_a", 
+                        "brand_id_a", 
+                        "sku_cid3_a", 
+                        "cqid_a", 
+                        "gbdt_user_behaviour_follow_context_flow"
+                    ], 
+                    "network_type": "feed_forward_embed_no_relu", 
+                    "normalize_kernel": false, 
+                    "share_expert_num": 6
+                }, 
+                "share_expert_5": {
+                    "batch_normalization": false, 
+                    "hidden_units": [
+                        1024, 
+                        512, 
+                        256
+                    ], 
+                    "input_nodes": [
+                        "qs_query_wid_order_stock_ratio_30d_a", 
+                        "qs_query_wid_order_stock_15d_norm_9995_a", 
+                        "qs_query_wid_order_stock_30d_norm_9995_a", 
+                        "qs_query_cid3_click_30d_prpoti_a", 
+                        "qs_query_wid_cvr_stock_30d_a", 
+                        "qs_query_wid_ctr_30d_alt_a", 
+                        "qs_query_pv_30d_a", 
+                        "qs_query_wid_click_ratio_30d_a", 
+                        "qs_query_wid_click_30d_alt_a", 
+                        "qs_query_wid_order_stock_3d_norm_9995_a", 
+                        "qs_query_wid_ircvr_stock_30d_a", 
+                        "qs_query_wid_order_stock_30d_a", 
+                        "qs_query_cid3_order_stock_30d_prpoti_a", 
+                        "qs_query_wid_click_30d_alt_norm_9995_a", 
+                        "qs_query_wid_order_stock_15d_a", 
+                        "qs_query_wid_ircvr_stock_15d_a", 
+                        "qs_query_wid_ctr_3d_alt_a", 
+                        "qs_query_wid_cvr_stock_3d_a", 
+                        "qs_query_wid_ircvr_stock_3d_a", 
+                        "qs_query_wid_amount_stock_15d_a", 
+                        "qs_query_wid_order_stock_3d_a", 
+                        "qs_query_wid_click_3d_alt_norm_9995_a", 
+                        "wid_season_score_a", 
+                        "sku_search_order_3h_max_a", 
+                        "sku_search_order_3h_sum_a", 
+                        "sku_search_show_3h_sum_a", 
+                        "sku_search_show_12h_max_a", 
+                        "sku_search_order_24h_max_a", 
+                        "sku_search_show_24h_max_a", 
+                        "sku_search_order_24h_sum_a", 
+                        "sku_search_show_24h_sum_a", 
+                        "user_age", 
+                        "age_match_a", 
+                        "user_logistics_provinceid", 
+                        "user_logistics_cityid", 
+                        "user_logistics_countyid", 
+                        "bm25_12_a", 
+                        "bm25_2_a", 
+                        "cart_cnt_a", 
+                        "cart_time_diff_a", 
+                        "child_age_gender_cfd_a", 
+                        "click_brand_cnt_1day_a", 
+                        "click_brand_cnt_1h_a", 
+                        "click_brand_time_diff_a", 
+                        "click_cnt_1day_a", 
+                        "click_cnt_1h_a", 
+                        "click_cnt_3days_a", 
+                        "click_cnt_a", 
+                        "click_time_diff_a", 
+                        "comments_fea_a", 
+                        "comments_fea_maxmin_norm_a", 
+                        "fb_weight_a", 
+                        "female_rate_a", 
+                        "follow_brand_time_diff_a", 
+                        "follow_cnt_a", 
+                        "follow_time_diff_a", 
+                        "user_gender", 
+                        "gender_match_a", 
+                        "gender_match_up_a", 
+                        "gender_match_up_fm_a", 
+                        "good_comment_ratio_fea_a", 
+                        "good_comment_ratio_fea_maxmin_norm_a", 
+                        "hot_fea_a", 
+                        "hot_fea_maxmin_norm_a", 
+                        "is_hst_clk_fea_a", 
+                        "is_hst_ord_fea_a", 
+                        "is_self_fea_a", 
+                        "user_is_plus", 
+                        "item_age_a", 
+                        "order_cnt_a", 
+                        "order_time_diff_a", 
+                        "price_a", 
+                        "price_maxmin_norm_a", 
+                        "qs_query_wid_ctr_lcb_30d_a", 
+                        "qs_query_wid_cvr_lcb_30d_a", 
+                        "query", 
+                        "query_ambiguity_a", 
+                        "query_brand_a", 
+                        "query_brand_match_a", 
+                        "query_frequency_a", 
+                        "query_gender_a", 
+                        "query_price_match_a", 
+                        "query_season_a", 
+                        "relevance_score_a", 
+                        "sale_15_a", 
+                        "sale15_fea_a", 
+                        "sale15_fea_maxmin_norm_a", 
+                        "sale3_fea_a", 
+                        "sales15_fea_a", 
+                        "sales3_fea_a", 
+                        "sku_addcart_1h_a", 
+                        "sku_order_1h_a", 
+                        "sku_ud_order_1h_a", 
+                        "sku_ud_order_3h_max_a", 
+                        "sku_follow_6h_max_a", 
+                        "sku_ud_order_6h_max_a", 
+                        "sku_follow_12h_max_a", 
+                        "sku_addcart_12h_max_a", 
+                        "sku_order_12h_max_a", 
+                        "sku_ud_addcart_12h_max_a", 
+                        "sku_ud_order_12h_max_a", 
+                        "sku_click_24h_max_a", 
+                        "sku_addcart_24h_max_a", 
+                        "sku_follow_3h_sum_a", 
+                        "sku_addcart_3h_sum_a", 
+                        "sku_follow_12h_sum_a", 
+                        "sku_ud_order_24h_sum_a", 
+                        "text_weight_a", 
+                        "wid_region_sales_amount_15d_exwh_a", 
+                        "wid_region_sales_amount_3d_exwh_a", 
+                        "wid_region_sales_amount_raw_15d_exwh_a", 
+                        "wid_region_sales_amount_raw_3d_exwh_a", 
+                        "wid_region_sales_quantity_15d_exwh_a", 
+                        "wid_region_sales_quantity_3d_exwh_a", 
+                        "wid_region_sales_quantity_raw_15d_exwh_a", 
+                        "wid_region_sales_quantity_raw_3d_exwh_a", 
+                        "window_size_a", 
+                        "wid_a", 
+                        "shop_id_a", 
+                        "brand_id_a", 
+                        "sku_cid3_a", 
+                        "cqid_a", 
+                        "gbdt_user_behaviour_follow_context_flow"
+                    ], 
+                    "network_type": "feed_forward_embed_no_relu", 
+                    "normalize_kernel": false, 
+                    "share_expert_num": 6
+                }
+            }
+        }, 
+        "normalize_kernel": false, 
+        "optimizer": "CustomLazyAdamW", 
+        "positive_weight": 1.0, 
+        "query_layer_sizes": [], 
+        "random_embedding_only_update": 0.0, 
+        "regularizer_scale": 0.0, 
+        "session_eval_heads": [
+            "ctcvr", 
+            "ctr", 
+            "cvr", 
+            "ctavr"
+        ], 
+        "siamese": false, 
+        "task_num": 3
+    }, 
+    "model_path": "/home/wangying313/9n-das-outputs/wangying313-topk_daily2=2021-08-29-b/models", 
+    "num_gpus": 4, 
+    "num_parallel_calls": 4, 
+    "predict_config": {
+        "batch_size": 1024, 
+        "dataset_header_file": "hdfs://ns1013/user/recsys/rank/deepranking/wangying313/cxr/all/pointwise_header"
+    }, 
+    "prediction_file": "/home/wangying313/9n-das-outputs/wangying313-topk_daily2=2021-08-29/models/pred", 
+    "ps_balance_strategy": true, 
+    "reader": "FusedDataset", 
+    "secondary_eval_config_files": [
+        "session_auc_jx_2021-08-29.json", 
+        "session_auc_js.json"
+    ], 
+    "session_validate_header_map": "label:label,query:query,uid:uid,uuid:uuid,pvid:pvid,pos:pos,price:price,catid:catid", 
+    "session_validate_tsv_with_header": "hdfs://ns1013/user/recsys/rank/deepranking/wangying313/cxr/all/test_set_jx_tsv/version=2021-08-29/test_set_jx_sorted_with_header", 
+    "shared_embedding_features": {
+        "areaid": {
+            "features": [
+                "user_logistics_provinceid", 
+                "user_logistics_cityid", 
+                "user_logistics_countyid"
+            ]
+        }, 
+        "brand_id": {
+            "features": [
+                "brand_id_a", 
+                "user_behaviour_fco_yestcontx_flow_brandid_lists_a", 
+                "user_behaviour_fco_yestcontx_flow_brandid_lists", 
+                "user_behaviour_click_flow_brand_id_lists", 
+                "user_behaviour_order_flow_brand_id_lists", 
+                "user_behaviour_cart_flow_brand_id_lists", 
+                "user_behaviour_follow_flow_brand_id_lists"
+            ]
+        }, 
+        "cqid": {
+            "features": [
+                "cqid_a", 
+                "user_behaviour_fco_yestcontx_flow_cqid_lists_a"
+            ]
+        }, 
+        "shop_id": {
+            "features": [
+                "shop_id_a", 
+                "user_behaviour_fco_yestcontx_flow_shopid_lists_a", 
+                "user_behaviour_fco_yestcontx_flow_shopid_lists", 
+                "user_behaviour_click_flow_shop_id_lists", 
+                "user_behaviour_order_flow_shop_id_lists", 
+                "user_behaviour_cart_flow_shop_id_lists", 
+                "user_behaviour_follow_flow_shop_id_lists"
+            ]
+        }, 
+        "sku_cid1": {
+            "features": [
+                "sku_cid1_a", 
+                "user_behaviour_click_flow_cid1_lists", 
+                "user_behaviour_order_flow_cid1_lists", 
+                "user_behaviour_cart_flow_cid1_lists", 
+                "user_behaviour_follow_flow_cid1_lists"
+            ]
+        }, 
+        "sku_cid2": {
+            "features": [
+                "sku_cid2_a", 
+                "user_behaviour_click_flow_cid2_lists", 
+                "user_behaviour_order_flow_cid2_lists", 
+                "user_behaviour_cart_flow_cid2_lists", 
+                "user_behaviour_follow_flow_cid2_lists"
+            ]
+        }, 
+        "sku_cid3": {
+            "features": [
+                "sku_cid3_a", 
+                "user_behaviour_fco_yestcontx_flow_cid3_lists_a", 
+                "user_behaviour_fco_yestcontx_flow_cid3_lists", 
+                "user_behaviour_click_flow_cid3_lists", 
+                "user_behaviour_order_flow_cid3_lists", 
+                "user_behaviour_cart_flow_cid3_lists", 
+                "user_behaviour_follow_flow_cid3_lists"
+            ]
+        }, 
+        "type": {
+            "features": [
+                "user_behaviour_fco_yestcontx_flow_type_lists_a"
+            ]
+        }, 
+        "wid": {
+            "embedding_oov_buckets": 6000000, 
+            "features": [
+                "wid_a", 
+                "user_behaviour_fco_yestcontx_flow_wid_lists_a", 
+                "user_behaviour_fco_yestcontx_flow_wid_lists", 
+                "user_behaviour_click_flow", 
+                "user_behaviour_order_flow", 
+                "user_behaviour_cart_flow", 
+                "user_behaviour_follow_flow"
+            ]
+        }, 
+        "word": {
+            "features": [
+                "query", 
+                "sku_title_a"
+            ]
+        }
+    }, 
+    "shuffle": true, 
+    "test_dataset_files": "XXXXXXXXXXXXXXXXXXXXXXXXX", 
+    "tflocal": {
+        "input_type": 3
+    }, 
+    "train_dataset_files": "XXXXXXXXXXXXXXXXXXXXXXXXX"
+}
